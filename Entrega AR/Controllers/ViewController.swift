@@ -36,16 +36,6 @@ class ViewController: UIViewController {
         
         let scene = SCNScene(named: "art.scnassets/StartingScene.scn")!
         sceneView.scene = scene
-        
-        let eevee = Pokemon(name: "Eevee", number: "#133", weight: "6.5 kg",
-                            height: "0.3 m", type: "Normal")
-        
-        self.name.text = eevee.name
-        self.number.text = eevee.number
-        self.weight.text = eevee.weight
-        self.height.text = eevee.heigth
-        self.type.text = eevee.type
-        
         hideLabels()
     }
     
@@ -124,8 +114,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func playEeveeSound() {
-        guard let url = Bundle.main.url(forResource: "eeveeSound", withExtension: "mov") else { return }
+    func playPokemonSound(pokemonName: String) {
+        guard let url = Bundle.main.url(forResource: pokemonName, withExtension: "mov") else { return }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -145,47 +135,6 @@ class ViewController: UIViewController {
     // MARK: - ARSCNViewDelegate
 
 extension ViewController: ARSCNViewDelegate {
-    
-//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-//
-//        let node = SCNNode()
-//
-//        if let imageAnchor = anchor as? ARImageAnchor {
-//
-//            // Building a plane over the tracked image
-//            let pokemonCard = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
-//                                   height: imageAnchor.referenceImage.physicalSize.height)
-//
-//            // Adding color to this plane
-//            if let  image = UIImage(named: "pokedex-background") {
-//                pokemonCard.firstMaterial?.diffuse.contents = image
-//            }
-//
-//            let pokemonCardNode = SCNNode(geometry: pokemonCard)
-//
-//            // Matching plane rotation with the pokemon
-//            pokemonCardNode.eulerAngles.x = -.pi / 2
-//
-//            let pokemonScene = SCNScene(named: "art.scnassets/Eevee.scn")!
-//            let pokemonNode = pokemonScene.rootNode.childNodes.first!
-//
-//            // Positioning pokemon with the same position of the
-//            // card (0, 0, 0), but changing Z so it can be at the front
-//            pokemonNode.position = SCNVector3(0, 0, 0.15)
-//
-//            // Showing pokedex information
-//            DispatchQueue.main.async {
-//                self.showLabels()
-//                self.playEeveeSound()
-//            }
-//
-//            pokemonCardNode.addChildNode(pokemonNode)
-//            node.addChildNode(pokemonCardNode)
-//            rotatePokemon(pokemonNode)
-//        }
-//
-//        return node
-//    }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let imageAnchor = anchor as? ARImageAnchor {
@@ -208,31 +157,17 @@ extension ViewController: ARSCNViewDelegate {
             let imageName = referenceImage.name ?? ""
             
             DispatchQueue.main.async {
+                let pokemon:Pokemon = self.buildPokemon(name: imageName)
+                self.buildPokedexInformation(pokemon: pokemon)
                 self.build3DPokemon(imageName: imageName, pokemonCardNode: pokemonCardNode)
                 self.showLabels()
+                self.playPokemonSound(pokemonName: imageName)
             }
             
             node.addChildNode(pokemonCardNode)
         }
     }
-    
-    func build3DPokemon(imageName: String, pokemonCardNode: SCNNode) {
         
-        let pokemonScene = SCNScene(named: "art.scnassets/\(imageName).scn")!
-        let pokemonNode = pokemonScene.rootNode.childNodes.first!
-        
-        // Positioning pokemon with the same position of the
-        // card (0, 0, 0), but changing Z so it can be at the front
-        pokemonNode.position = SCNVector3(0, 0, 0.15)
-        pokemonCardNode.addChildNode(pokemonNode)
-        rotatePokemon(pokemonNode)
-        
-        //playEeveeSound()
-    }
-    
-    
-    
-    
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         
         if let imageAnchor = anchor as? ARImageAnchor {
@@ -248,8 +183,53 @@ extension ViewController: ARSCNViewDelegate {
         }
     }
     
+    // MARK: - Pokemon builders
+    
+    func buildPokedexInformation(pokemon: Pokemon) {
+
+        self.name.text = pokemon.name
+        self.number.text = pokemon.number
+        self.weight.text = pokemon.weight
+        self.height.text = pokemon.heigth
+        self.type.text = pokemon.type
+    }
+    
+    func buildPokemon(name: String) -> Pokemon {
+        // Returns a pokemon object according to
+        // image traked
+        
+        switch name {
+        case "Eevee":
+            return Pokemon(name: "Eevee", number: "#133", weight: "6.5 kg",
+                           height: "0.3 m", type: "Normal")
+        case "Lapras":
+            return Pokemon(name: "Lapras", number: "#131", weight: "220.0 kg",
+                           height: "2.5 m", type: "Transporte")
+        default:
+            return Pokemon(name: "Eevee", number: "#133", weight: "6.5 kg",
+                           height: "0.3 m", type: "Normal")
+        }
+    }
+    
+    func build3DPokemon(imageName: String, pokemonCardNode: SCNNode) {
+        // Adds a pokemon node according to
+        // image tracked
+        
+        let pokemonScene = SCNScene(named: "art.scnassets/\(imageName).scn")!
+        let pokemonNode = pokemonScene.rootNode.childNodes.first!
+        
+        // Positioning pokemon with the same position of the
+        // card (0, 0, 0), but changing Z so it can be at the front
+        pokemonNode.position = SCNVector3(0, 0, 0.15)
+        pokemonCardNode.addChildNode(pokemonNode)
+        rotatePokemon(pokemonNode)
+    }
+    
+    // MARK: - Pokemon rotation
+    
     fileprivate func rotatePokemon(_ pokemonNode: SCNNode) {
         // Rotates pokemon 3D model
+        
         let action = SCNAction.rotateBy(x: 0, y: CGFloat(2 * Double.pi), z: 0, duration: 15)
         let repAction = SCNAction.repeatForever(action)
         pokemonNode.runAction(repAction, forKey: "pokemonRotation")

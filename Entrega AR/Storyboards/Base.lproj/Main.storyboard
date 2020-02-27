@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="xU2-9d-pNp">
             <objects>
-                <viewController id="4JD-eb-Nuj" customClass="ViewController" customModule="Entrega_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4JD-eb-Nuj" customClass="ViewController" customModule="Pokédex_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jm9-uf-xVo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,7 +40,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yg-HY-OuE">
-                                <rect key="frame" x="232" y="630" width="42" height="21"/>
+                                <rect key="frame" x="232" y="630" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="UrH-PY-ake"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +129,6 @@
                             <constraint firstItem="6yg-HY-OuE" firstAttribute="leading" secondItem="dW4-aO-0ZQ" secondAttribute="trailing" constant="37" id="OYr-ha-z3M"/>
                             <constraint firstItem="dW4-aO-0ZQ" firstAttribute="leading" secondItem="nD8-ok-b2U" secondAttribute="leading" constant="151" id="Pf2-Wj-bhA"/>
                             <constraint firstItem="nD8-ok-b2U" firstAttribute="trailing" secondItem="Q89-Br-yce" secondAttribute="trailing" id="Shc-gb-FpS"/>
-                            <constraint firstItem="nD8-ok-b2U" firstAttribute="trailing" secondItem="6yg-HY-OuE" secondAttribute="trailing" constant="140" id="XYK-Sv-qIw"/>
                             <constraint firstItem="nD8-ok-b2U" firstAttribute="trailing" secondItem="wqG-I6-LKZ" secondAttribute="trailing" constant="48" id="fd2-Oz-cem"/>
                             <constraint firstItem="Q89-Br-yce" firstAttribute="leading" secondItem="nD8-ok-b2U" secondAttribute="leading" id="gYE-ZL-2vS"/>
                             <constraint firstItem="dW4-aO-0ZQ" firstAttribute="top" secondItem="wqG-I6-LKZ" secondAttribute="bottom" constant="33" id="m8q-Wj-2yY"/>
