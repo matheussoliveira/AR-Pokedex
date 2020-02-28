@@ -5,6 +5,9 @@
   },
   "resources" : [
     {
+      "filename" : "Charizard.arreferenceimage"
+    },
+    {
       "filename" : "Eevee.arreferenceimage"
     },
     {
@@ -12,6 +15,9 @@
     },
     {
       "filename" : "Lapras.arreferenceimage"
+    },
+    {
+      "filename" : "Pikachu.arreferenceimage"
     }
   ]
 }

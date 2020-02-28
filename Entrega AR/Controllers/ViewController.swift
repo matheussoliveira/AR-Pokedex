@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var height: UILabel!
     @IBOutlet weak var type: UILabel!
     
-    // Labels
+    // Pokédex labels
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
@@ -205,6 +205,12 @@ extension ViewController: ARSCNViewDelegate {
         case "Lapras":
             return Pokemon(name: "Lapras", number: "#131", weight: "220.0 kg",
                            height: "2.5 m", type: "Transporte")
+        case "Charizard":
+            return Pokemon(name: "Charizard", number: "#006", weight: "905.0 kg",
+                           height: "154.5 m", type: "Fogo/Voador")
+            case "Pikachu":
+            return Pokemon(name: "Pikachu", number: "#025", weight: "60.0 kg",
+                           height: "0.3 m", type: "Elétrico")
         default:
             return Pokemon(name: "Eevee", number: "#133", weight: "6.5 kg",
                            height: "0.3 m", type: "Normal")
