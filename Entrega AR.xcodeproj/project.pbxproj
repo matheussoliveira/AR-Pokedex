@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F014A3C240804CC00675F96 /* Lapras.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2F014A3B240804CC00675F96 /* Lapras.mov */; };
+		2F00CE8A240C49AA0052C215 /* Charizard.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2F00CE89240C49AA0052C215 /* Charizard.mov */; };
+		2F00CE8D240C49B40052C215 /* Pikachu.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2F00CE8B240C49B30052C215 /* Pikachu.mov */; };
+		2F00CE8E240C49B40052C215 /* Lapras.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2F00CE8C240C49B40052C215 /* Lapras.mov */; };
 		2F014A3F24080C8D00675F96 /* Eevee.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F014A3E24080C8D00675F96 /* Eevee.png */; };
 		2F07F5BE240951FF00D922DE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2F07F5BD240951FF00D922DE /* README.md */; };
 		2F1319A82400183E00038C98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1319A72400183E00038C98 /* AppDelegate.swift */; };
@@ -16,15 +18,15 @@
 		2F1319B12400184100038C98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1319B02400184100038C98 /* Assets.xcassets */; };
 		2F1319B42400184100038C98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1319B22400184100038C98 /* LaunchScreen.storyboard */; };
 		2F1319BD24002CDF00038C98 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1319BC24002CDF00038C98 /* art.scnassets */; };
-		2F21FFB2240943FE008A0F3B /* Pikachu.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2F21FFB1240943FE008A0F3B /* Pikachu.mov */; };
-		2F51B1BD24093C12003D9169 /* Charizard.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2F51B1BC24093C12003D9169 /* Charizard.mov */; };
 		2FA5AAB0240708190074DFE1 /* pokedexStart.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5AAAF240708190074DFE1 /* pokedexStart.mov */; };
 		2FA5AAB2240709F60074DFE1 /* Eevee.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5AAB1240709F60074DFE1 /* Eevee.mov */; };
 		2FFA2B902406FC58003DF2A7 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA2B8F2406FC58003DF2A7 /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F014A3B240804CC00675F96 /* Lapras.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Lapras.mov; path = ../../../../Lapras.mov; sourceTree = "<group>"; };
+		2F00CE89240C49AA0052C215 /* Charizard.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Charizard.mov; sourceTree = "<group>"; };
+		2F00CE8B240C49B30052C215 /* Pikachu.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Pikachu.mov; sourceTree = "<group>"; };
+		2F00CE8C240C49B40052C215 /* Lapras.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Lapras.mov; sourceTree = "<group>"; };
 		2F014A3E24080C8D00675F96 /* Eevee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Eevee.png; path = Documentation/Eevee.png; sourceTree = SOURCE_ROOT; };
 		2F07F5BD240951FF00D922DE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2F1319A42400183E00038C98 /* Pokédex AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokédex AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,8 +37,6 @@
 		2F1319B32400184100038C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F1319B52400184100038C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F1319BC24002CDF00038C98 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		2F21FFB1240943FE008A0F3B /* Pikachu.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Pikachu.mov; path = ../../../../Pikachu.mov; sourceTree = "<group>"; };
-		2F51B1BC24093C12003D9169 /* Charizard.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Charizard.mov; path = ../../../../Charizard.mov; sourceTree = "<group>"; };
 		2FA5AAAF240708190074DFE1 /* pokedexStart.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = pokedexStart.mov; sourceTree = "<group>"; };
 		2FA5AAB1240709F60074DFE1 /* Eevee.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Eevee.mov; sourceTree = "<group>"; };
 		2FFA2B8F2406FC58003DF2A7 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
@@ -122,10 +122,10 @@
 		2FA5AAAE240708120074DFE1 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				2F014A3B240804CC00675F96 /* Lapras.mov */,
-				2F21FFB1240943FE008A0F3B /* Pikachu.mov */,
-				2F51B1BC24093C12003D9169 /* Charizard.mov */,
 				2FA5AAB1240709F60074DFE1 /* Eevee.mov */,
+				2F00CE8C240C49B40052C215 /* Lapras.mov */,
+				2F00CE8B240C49B30052C215 /* Pikachu.mov */,
+				2F00CE89240C49AA0052C215 /* Charizard.mov */,
 				2FA5AAAF240708190074DFE1 /* pokedexStart.mov */,
 			);
 			path = Sounds;
@@ -201,10 +201,10 @@
 				2F1319B42400184100038C98 /* LaunchScreen.storyboard in Resources */,
 				2F1319BD24002CDF00038C98 /* art.scnassets in Resources */,
 				2FA5AAB0240708190074DFE1 /* pokedexStart.mov in Resources */,
+				2F00CE8D240C49B40052C215 /* Pikachu.mov in Resources */,
+				2F00CE8A240C49AA0052C215 /* Charizard.mov in Resources */,
+				2F00CE8E240C49B40052C215 /* Lapras.mov in Resources */,
 				2F1319B12400184100038C98 /* Assets.xcassets in Resources */,
-				2F21FFB2240943FE008A0F3B /* Pikachu.mov in Resources */,
-				2F51B1BD24093C12003D9169 /* Charizard.mov in Resources */,
-				2F014A3C240804CC00675F96 /* Lapras.mov in Resources */,
 				2F1319AF2400183E00038C98 /* Main.storyboard in Resources */,
 				2F014A3F24080C8D00675F96 /* Eevee.png in Resources */,
 				2FA5AAB2240709F60074DFE1 /* Eevee.mov in Resources */,
